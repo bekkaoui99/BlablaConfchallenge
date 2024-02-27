@@ -10,6 +10,7 @@ public class Data {
 
     public Data() {
         products = new ArrayList<>();
+        totalPrice = 0;
     }
 
 
@@ -23,8 +24,12 @@ public class Data {
     }
 
 
-    public void addProduct(Product product){
-        this.products.add(product);
-        this.totalPrice += product.productPrice();
+   public void setTotalPrice(double totalPrice){
+        this.totalPrice += totalPrice;
+   }
+
+    public void setProducts(Product products){
+        this.products.add(products);
     }
+
 }

@@ -177,9 +177,10 @@ public class Main {
     }
 
 
-    static  void collectingDataV2(String cityName , String productName , double productPrice , Map<String , Data> allData){
+    static synchronized void collectingDataV2(String cityName , String productName , double productPrice , Map<String , Data> allData){
         Product product = new Product(productName , productPrice);
-        allData.get(cityName).addProduct(product);
+        allData.get(cityName).setProducts(product);
+        allData.get(cityName).setTotalPrice(productPrice);
     }
 
 }
